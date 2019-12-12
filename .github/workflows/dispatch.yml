@@ -10,4 +10,5 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Dispatch
-      run: curl --fail -X POST https://api.github.com/repos/ianharrigan/GitHubActionsTest/dispatches -H 'Accept: application/vnd.github.everest-preview+json' -H 'Authorization: Bearer ${{ secrets.GH_TOKEN }}' --data "{\"event_type\": \"test\"}"
+      run: |
+        curl --fail -X POST https://api.github.com/repos/ianharrigan/GitHubActionsTest/dispatches -H 'Accept: application/vnd.github.everest-preview+json' -H 'Authorization: Bearer ${{ secrets.GH_TOKEN }}' --data "{\"event_type\": \"test\"}"
